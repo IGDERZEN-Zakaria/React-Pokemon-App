@@ -20,7 +20,7 @@ const App: FunctionComponent = () => {
           </div>
         </nav>
         <Switch>
-          <Route exact path="/" component={PokemonsList} />
+          <PrivateRoute exact path="/" component={PokemonsList} />
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/pokemons" component={PokemonsList} />
           <PrivateRoute exact path="/pokemon/add" component={PokemonAdd} />
