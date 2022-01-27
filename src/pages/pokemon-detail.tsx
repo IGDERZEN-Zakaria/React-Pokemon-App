@@ -10,9 +10,7 @@ import Loader from "../components/loader";
 
 type Params = { id: string };
 
-const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({
-  match,
-}) => {
+const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({ match }) => {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
 
   useEffect(() => {
@@ -22,9 +20,7 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({
     //   }
     // });
 
-    PokemonService.getPokemon(+match.params.id).then((pokemon) =>
-      setPokemon(pokemon)
-    );
+    PokemonService.getPokemon(+match.params.id).then((pokemon) => setPokemon(pokemon));
   }, [match.params.id]);
 
   return (
@@ -82,11 +78,7 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({
 
                       <tr>
                         <td>Date de création</td>
-                        {pokemon.created ? (
-                          <td>{formatDate(pokemon.created)}</td>
-                        ) : (
-                          <td> /</td>
-                        )}
+                        {pokemon.created ? <td>{formatDate(pokemon.created)}</td> : <td> /</td>}
                       </tr>
                     </tbody>
                   </table>

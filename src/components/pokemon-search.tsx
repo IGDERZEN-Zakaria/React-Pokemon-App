@@ -16,9 +16,7 @@ const PokemonSearch: FunctionComponent = () => {
       return;
     }
 
-    PokemonService.searchPokemon(term).then((pokemons) =>
-      setPokemons(pokemons)
-    );
+    PokemonService.searchPokemon(term).then((pokemons) => setPokemons(pokemons));
   };
 
   return (
@@ -36,11 +34,7 @@ const PokemonSearch: FunctionComponent = () => {
             </div>
             <div className="collection">
               {pokemons.map((pokemon) => (
-                <Link
-                  key={pokemon.id}
-                  to={`/pokemons/${pokemon.id}`}
-                  className="collection-item"
-                >
+                <Link key={pokemon.id} to={`/pokemons/${pokemon.id}`} className="collection-item">
                   {pokemon.name}
                 </Link>
               ))}

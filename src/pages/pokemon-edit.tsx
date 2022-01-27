@@ -6,9 +6,7 @@ import POKEMONS from "../models/mock-pokemon";
 
 type Params = { id: string };
 
-const PokemonEdit: FunctionComponent<RouteComponentProps<Params>> = ({
-  match,
-}) => {
+const PokemonEdit: FunctionComponent<RouteComponentProps<Params>> = ({ match }) => {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
 
   useEffect(() => {
